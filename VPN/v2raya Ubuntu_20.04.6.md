@@ -61,6 +61,7 @@ sudo systemctl restart v2raya
 
 
 成功订阅后，节点列表将显示在 "**SERVER**" 标签后；
+
 `Update` 用于更新订阅：
 
 
@@ -73,9 +74,9 @@ sudo systemctl restart v2raya
 
 
 
-选中节点后，"**View**"、"**Share**" 标签变为蓝色，同时节点将显示在左上角 "**Proxy Groups: PROXY**";
+选中节点后，"**View**"、"**Share**" 标签变为蓝色，同时节点将显示在左上角 "**Proxy Groups: PROXY**"；
 
-左上角 "**Ready**"，`Start`，使其变为 "**Runing**"：
+左上角 "**Ready**"，`Start` 开启，使其变为 "**Runing**"：
 
 
 
