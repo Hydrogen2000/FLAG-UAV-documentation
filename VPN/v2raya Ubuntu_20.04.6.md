@@ -12,8 +12,10 @@ Ubuntu 20.04.6 LTS 操作系统配置 v2rayA
 ```bash
 wget -O /tmp/v2raya-installer.sh https://raw.githubusercontent.com/v2rayA/v2rayA-installer/main/installer.sh
 ```
-参数 ‘-O’ 表示指定输出文件的位置和文件名。
+参数 `-O` 表示指定输出文件的位置和文件名。
 
-‘/tmp’ 是 Linux 的临时文件目录，系统重启或定期清理时，这里的文件可能被删除。
+`/tmp` 是 Linux 的临时文件目录，系统重启或定期清理时，这里的文件可能被删除。
+
+### 2. v2rayA配置使用
 
 
