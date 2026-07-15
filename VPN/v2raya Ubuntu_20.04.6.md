@@ -1,5 +1,5 @@
 # v2rayA Ubuntu_20.04.6
-Ubuntu 20.04.6 LTS 操作系统配置 v2rayA
+Ubuntu 20.04.6 LTS 操作系统安装、配置 v2rayA
 
 ## 一、v2rayA安装
 
@@ -16,6 +16,11 @@ wget -O /tmp/v2raya-installer.sh https://raw.githubusercontent.com/v2rayA/v2rayA
 
 `/tmp` 是 Linux 的临时文件目录，系统重启或定期清理时，这里的文件可能被删除。
 
-### 2. v2rayA配置使用
+### 2. 运行官方安装脚本
+
+```bash
+sudo sh /tmp/v2raya-installer.sh
+```
+
 
 
