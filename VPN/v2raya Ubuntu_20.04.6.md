@@ -84,11 +84,65 @@ sudo systemctl restart v2raya
 
 <img src="/VPN/images/6.png" width="800">
 
+### 3. 开启代理
+
+系统应用使用代理：将Ubuntu操作吸引`设置`→
 
 
+终端使用代理：
 
+```bash
+export http_proxy=http://127.0.0.1:20171;
+export https_proxy=http://127.0.0.1:20171;
+export all_proxy=socks5h://127.0.0.1:20170;
+export HTTP_PROXY="$http_proxy"
+export HTTPS_PROXY="$https_proxy"
+export ALL_PROXY="$all_proxy"
+```
+**注意**：仅对当前终端有效，新开启终端需要重新输入指令。
 
+终端清除代理：
 
+```bash
+unset http_proxy https_proxy all_proxy
+unset HTTP_PROXY HTTPS_PROXY ALL_PROXY
+```
+
+为了简化输入，可以编辑bashrc添加指令：
+```bash
+sudo gedit ~/.bashrc
+```
+
+在文件末尾写入：
+```bash
+proxy_on()
+{
+    export http_proxy=http://127.0.0.1:20171
+    export https_proxy=http://127.0.0.1:20171
+    export all_proxy=socks5h://127.0.0.1:20170
+
+    export HTTP_PROXY="$http_proxy"
+    export HTTPS_PROXY="$https_proxy"
+    export ALL_PROXY="$all_proxy"
+
+    echo "Terminal proxy enabled"
+}
+
+proxy_off()
+{
+    unset http_proxy https_proxy all_proxy
+    unset HTTP_PROXY HTTPS_PROXY ALL_PROXY
+
+    echo "Terminal proxy disabled"
+}
+```
+
+使配置立即生效：
+```bash
+source ~/.bashrc
+```
+
+此后，只需输入 `proxy_on` 和 `proxy_off` 使用、清除代理。
 
 
 
