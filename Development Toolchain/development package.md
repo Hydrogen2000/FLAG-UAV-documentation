@@ -33,7 +33,7 @@ git config --global --unset http.proxy
 git config --global --unset https.proxy
 ```
 
-## 一、plotjuggler
+## 二、plotjuggler
 
 安装 plotjuggler 软件包：
 
@@ -49,7 +49,7 @@ sudo apt-get install ros-noetic-plotjuggler-ros
 rosrun plotjuggler plotjuggler
 ```
 
-## 二、VRPN
+## 三、VRPN
 
 安装 VRPN 软件包：
 
