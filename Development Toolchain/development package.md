@@ -2,6 +2,37 @@
 
 开发用软件包配置汇总
 
+## 一、git
+
+安装 git 软件包：
+
+```bash
+sudo apt-get install git
+```
+
+只为 git 配置代理：*(以v2rayA端口为例)*
+
+```bash
+git config --global http.proxy http://127.0.0.1:20171
+git config --global https.proxy https://127.0.0.1:20171
+```
+
+验证代理设置成功：
+
+```bash
+git config --get http.proxy
+git config --get https.proxy
+```
+
+应该输出代理端口。
+
+清除 git 代理：
+
+```bash
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+
 ## 一、plotjuggler
 
 安装 plotjuggler 软件包：
