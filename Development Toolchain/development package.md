@@ -7,14 +7,10 @@
 安装 plotjuggler 软件包：
 
 ```bash
-sudo apt-get install ros-noetic-plotjuggler
+sudo apt-get install ros-noetic-plotjuggler-ros
 ```
 
-安装 ROS 支持软件包，否则无法打开 bag 文件：
-
-```bash
-sudo apt-get install ros-noetic-plotjuggler-msgs ros-noetic-plotjuggler-ros
-```
+基于软件包依赖，会自动安装另外两个包 `ros-noetic-plotjuggler` 和 `ros-noetic-plotjuggler-msgs`。*(一些教程里提到，但不用单独安)*
 
 运行 plotjuggler：
 
@@ -24,13 +20,13 @@ rosrun plotjuggler plotjuggler
 
 ## 二、VRPN
 
-安装 VRPN ROS 软件包：
+安装 VRPN 软件包：
 
 ```bash
 sudo apt install ros-noetic-vrpn
 ```
 
-创建工作空间编译 vrpn_client_ros 功能包
+创建工作空间，编译 vrpn_client_ros 功能包
 
 ```bash
 mkdir vrpn_client_ros/src -p
