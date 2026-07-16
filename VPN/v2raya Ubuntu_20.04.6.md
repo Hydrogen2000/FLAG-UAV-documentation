@@ -108,7 +108,7 @@ unset http_proxy https_proxy all_proxy
 unset HTTP_PROXY HTTPS_PROXY ALL_PROXY
 ```
 
-为了简化输入，可以编辑bashrc添加指令：
+为了简化输入，可以编辑 **bashrc** 添加指令：
 ```bash
 sudo gedit ~/.bashrc
 ```
