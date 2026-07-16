@@ -89,7 +89,9 @@ sudo systemctl restart v2raya
 v2rayA 默认端口为：
 
 127.0.0.1:20170 **SOCKS5**
+
 127.0.0.1:20171 **HTTP 代理**
+
 127.0.0.1:20172 **带分流规则的 HTTP 代理** *(一般用不到)*
 
 系统应用使用代理：将Ubuntu操作吸引`设置`→
@@ -98,9 +100,9 @@ v2rayA 默认端口为：
 终端使用代理：
 
 ```bash
-export http_proxy=http://127.0.0.1:20171;
-export https_proxy=http://127.0.0.1:20171;
-export all_proxy=socks5h://127.0.0.1:20170;
+export http_proxy=http://127.0.0.1:20171
+export https_proxy=http://127.0.0.1:20171
+export all_proxy=socks5h://127.0.0.1:20170
 export HTTP_PROXY="$http_proxy"
 export HTTPS_PROXY="$https_proxy"
 export ALL_PROXY="$all_proxy"
