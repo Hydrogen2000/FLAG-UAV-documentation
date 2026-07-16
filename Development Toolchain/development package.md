@@ -57,7 +57,7 @@ rosrun plotjuggler plotjuggler
 sudo apt install ros-noetic-vrpn
 ```
 
-创建工作空间，编译 vrpn_client_ros 功能包
+创建工作空间，编译 vrpn_client_ros 功能包：
 
 ```bash
 mkdir vrpn_client_ros/src -p
@@ -68,13 +68,15 @@ cd ..
 catkin_make
 ```
 
-启动 vrpn_client_ros 节点
+启动 vrpn_client_ros 节点，如果预先填写 `sample.launch` 文件中的 `server: $(arg server)` 参数，直接使用以下指令：
 
 ```bash
-mkdir vrpn_client_ros/src -p
-cd vrpn_client_ros/src
-catkin_init_workspace
-git clone https://github.com/ros-drivers/vrpn_client_ros.git
-cd ..
-catkin_make
+cd vrpn_client_ros
+source devel/setup.bash
+roslaunch vrpn_client_ros sample.launch
+```
+
+如果 launch 文件没有预先修改，则指令最后一句需要添加参数：*(以 VRPN 发布端主机 IP 192.168.1.1 为例)*
+```bash
+roslaunch vrpn_client_ros sample.launch server:=192.168.1.1
 ```
