@@ -62,19 +62,19 @@ sudo systemctl restart v2raya
 
 <img src="/VPN/images/2.png" width="800">
 
+<img src="/VPN/images/3.png" width="200">
+
 成功订阅后，节点列表将显示在 "**SERVER**" 标签后；
 
 `Update` 用于更新订阅：
 
-<img src="/VPN/images/3.png" width="200">
+<img src="/VPN/images/4.png" width="800">
 
 选中节点后，左上角将出现 `PING` 用于测试连接；
 
 未启动代理时，左上角状态显示为红色 "**Ready**"；
 
 选择节点时 ***(最好只选一个)***，`Add to` 添加 `PROXY` 代理：
-
-<img src="/VPN/images/4.png" width="800">
 
 <img src="/VPN/images/5.png" width="800">
 
