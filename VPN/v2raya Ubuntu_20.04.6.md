@@ -55,15 +55,18 @@ sudo systemctl restart v2raya
 ### 2. 网页配置代理
 
 浏览器登入 `127.0.0.1:2017`，需要注册、登录账号：
+
 <img src="/VPN/images/1.png" width="300">
 
 按照对话框提示，或者右上角，`Import` 导入订阅链接，`Confirm` 确定：
 
+<img src="/VPN/images/2.png" width="600">
 
 成功订阅后，节点列表将显示在 "**SERVER**" 标签后；
 
 `Update` 用于更新订阅：
 
+<img src="/VPN/images/3.png" width="600">
 
 选中节点后，左上角将出现 `PING` 用于测试连接；
 
@@ -71,13 +74,15 @@ sudo systemctl restart v2raya
 
 选择节点时 ***(最好只选一个)***，`Add to` 添加 `PROXY` 代理：
 
+<img src="/VPN/images/4.png" width="600">
 
-
+<img src="/VPN/images/5.png" width="600">
 
 选中节点后，"**View**"、"**Share**" 标签变为蓝色，同时节点将显示在左上角 "**Proxy Groups: PROXY**"；
 
 左上角 "**Ready**"，`Start` 开启，使其变为 "**Runing**"：
 
+<img src="/VPN/images/6.png" width="600">
 
 
 
