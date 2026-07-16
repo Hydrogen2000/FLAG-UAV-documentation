@@ -55,7 +55,7 @@ sudo systemctl restart v2raya
 ### 2. 网页配置代理
 
 浏览器登入 `127.0.0.1:2017`，需要注册、登录账号：
-<img src="/image/1.png" width="300">
+<img src="/images/1.png" width="300">
 
 按照对话框提示，或者右上角，`Import` 导入订阅链接，`Confirm` 确定：
 
