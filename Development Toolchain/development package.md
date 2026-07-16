@@ -10,7 +10,7 @@
 sudo apt-get install git
 ```
 
-只为 git 配置代理：*(以v2rayA端口为例)*
+只为 git 配置代理：*(以 v2rayA 代理端口为例)*
 
 ```bash
 git config --global http.proxy http://127.0.0.1:20171
