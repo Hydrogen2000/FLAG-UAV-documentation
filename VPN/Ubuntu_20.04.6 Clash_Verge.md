@@ -30,73 +30,35 @@ https://github.com/clash-verge-rev/clash-verge-rev/releases/tag/v1.7.7
 
 ## 3. Clash Verge 开启代理
 
-桌面右上角图标处展开，此时应显示**规则模式**。开启`系统代理`，操作系统网路设置中的网络代理应显示**手动**，并且已自动填入所使用的端口：
-
-<img src="/VPN/images/11.png" width="600">
-
-此时应用已经可以使用代理。
-
-关闭`系统代理`，操作系统网路设置中的网络代理应显示为**关**：
+桌面右上角图标处展开，此时应显示**规则模式**。关闭`系统代理`：
 
 <img src="/VPN/images/10.png" width="600">
 
-终端使用代理：
+此时，操作系统网路设置中的网络代理应自动为**关**，应用不使用代理。
+
+通过 `env | grep -i proxy` 测试终端代理，应**无输出**。
+
+通过 `curl -s https://api.ipify.org; echo` 测试代理公网IP，应**无输出**。
+
+开启`系统代理`：
+
+<img src="/VPN/images/11.png" width="600">
+
+此时，操作系统网路设置中的网络代理应自动为**手动**，并且已填入所使用的端口，应用使用代理。
+
+通过 `env | grep -i proxy` 测试终端代理，输出应如：
 
 ```bash
-export http_proxy=http://127.0.0.1:20171
-export https_proxy=http://127.0.0.1:20171
-export all_proxy=socks5h://127.0.0.1:20170
-export HTTP_PROXY="$http_proxy"
-export HTTPS_PROXY="$https_proxy"
-export ALL_PROXY="$all_proxy"
-```
-**注意**：仅对当前终端有效，新开启终端需要重新输入指令。
-
-终端清除代理：
-
-```bash
-unset http_proxy https_proxy all_proxy
-unset HTTP_PROXY HTTPS_PROXY ALL_PROXY
+no_proxy=localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,::1
+https_proxy=http://127.0.0.1:7897/
+NO_PROXY=localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,::1
+HTTPS_PROXY=http://127.0.0.1:7897/
+HTTP_PROXY=http://127.0.0.1:7897/
+http_proxy=http://127.0.0.1:7897/
+ALL_PROXY=socks://127.0.0.1:7897/
+all_proxy=socks://127.0.0.1:7897/
 ```
 
-为了简化输入，可以编辑 **bashrc** 添加指令：
-```bash
-sudo gedit ~/.bashrc
-```
-
-在文件末尾写入：
-```bash
-proxy_on()
-{
-    export http_proxy=http://127.0.0.1:20171
-    export https_proxy=http://127.0.0.1:20171
-    export all_proxy=socks5h://127.0.0.1:20170
-
-    export HTTP_PROXY="$http_proxy"
-    export HTTPS_PROXY="$https_proxy"
-    export ALL_PROXY="$all_proxy"
-
-    echo "Terminal proxy enabled"
-}
-
-proxy_off()
-{
-    unset http_proxy https_proxy all_proxy
-    unset HTTP_PROXY HTTPS_PROXY ALL_PROXY
-
-    echo "Terminal proxy disabled"
-}
-```
-
-使配置立即生效：
-```bash
-source ~/.bashrc
-```
-
-此后，只需输入 `proxy_on` 和 `proxy_off` 使用、清除代理。
-
-
-
-
+通过 `curl -s https://api.ipify.org; echo` 测试代理公网IP，应输出一个**区别于 192.168.x.x 的公网IP**。
 此时桌面软件已经可以使用代理。
 
