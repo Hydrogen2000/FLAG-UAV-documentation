@@ -60,5 +60,3 @@ all_proxy=socks://127.0.0.1:7897/
 ```
 
 通过 `curl -s https://api.ipify.org; echo` 测试代理公网IP，应输出一个**区别于 192.168.x.x 的公网IP**。
-此时桌面软件已经可以使用代理。
-
