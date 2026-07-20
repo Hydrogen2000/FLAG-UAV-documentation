@@ -20,17 +20,17 @@ https://github.com/clash-verge-rev/clash-verge-rev/releases/tag/v1.7.7
 
 ## 2. Clash Verge 配置代理
 
-启动软件后，在***订阅***页卡填入订阅地址，点击***导入***。导入成功会显示添加的订阅：
+启动软件后，在**订阅**页卡填入订阅地址，点击**导入**。导入成功会显示添加的订阅：
 
 <img src="/VPN/images/8.png" width="800">
 
-在***代理***页卡，选择***规则***模式。可使用***延迟测试***功能，测速选择节点：
+在**代理**页卡，选择**规则**模式。可使用**延迟测试**功能，测速选择节点：
 
 <img src="/VPN/images/9.png" width="800">
 
 ## 3. Clash Verge 开启代理
 
-桌面右上角图标处展开，此时应显示“**规则模式**”。关闭***系统代理***：
+桌面右上角图标处展开，此时应显示“**规则模式**”。关闭**系统代理**：
 
 <img src="/VPN/images/10.png" width="600">
 
@@ -40,7 +40,7 @@ https://github.com/clash-verge-rev/clash-verge-rev/releases/tag/v1.7.7
 
 通过 `curl -s https://api.ipify.org; echo` 测试代理公网IP，应**无输出**。
 
-开启***系统代理***：
+开启**系统代理**：
 
 <img src="/VPN/images/11.png" width="600">
 
