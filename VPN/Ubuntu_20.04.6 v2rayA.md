@@ -23,7 +23,21 @@ wget -O /tmp/v2raya-installer.sh https://raw.githubusercontent.com/v2rayA/v2rayA
 sudo sh /tmp/v2raya-installer.sh
 ```
 
-很容易失败，需要**多尝试**运行几次，或者**科学上网**。*(鸡生蛋，蛋生鸡)*
+很容易失败，需要**多尝试**运行几次。
+
+如果已经有了**代理**工具 *(例如 Clash Verge，鸡生蛋，蛋生鸡)*，可以用以下指令代替，保证脚本运行使用代理：
+
+```bash
+sudo env \
+  http_proxy=http://127.0.0.1:20171 \
+  https_proxy=http://127.0.0.1:20171 \
+  HTTP_PROXY=http://127.0.0.1:20171 \
+  HTTPS_PROXY=http://127.0.0.1:20171 \
+  all_proxy=socks5h://127.0.0.1:20170 \
+  ALL_PROXY=socks5h://127.0.0.1:20170 \
+  no_proxy=127.0.0.1,localhost \
+  sh /tmp/v2raya-installer.sh
+```
 
 ## 二、v2rayA 配置使用
 
@@ -44,7 +58,7 @@ systemctl is-enabled v2raya
 systemctl is-active v2raya
 ```
 
-正常应该分别输出 "**enabled**" 和 "**active**"。
+正常应该分别输出 `enabled` 和 `active`。
 
 单次停止、启动、重启服务：*(应该用不到)*
 ```bash
