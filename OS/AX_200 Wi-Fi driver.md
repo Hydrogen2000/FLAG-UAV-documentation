@@ -48,11 +48,52 @@ linux-image-unsigned-6.1.177-0601177-generic_6.1.177-0601177.202607041520_amd64.
 linux-modules-6.1.177-0601177-generic_6.1.177-0601177.202607041520_amd64.deb
 ```
 
+下载内核软件包：
 
+```bash
+while IFS= read -r file; do
+  wget -c "${BASE}/${file}"
+  done < files.txt
+```
 
+检查下载结果：
 
+```bash
+ls -lh *.deb
+```
 
+应输出**同上的两个文件**。
 
+## 3. 安装并应用内核
+
+安装内核：
+
+```bash
+sudo apt install ./*.deb
+```
+
+更新 GRUB 并检查已安装内核：
+
+```bash
+sudo update-grub
+grep -E "menuentry 'Ubuntu, with Linux (6\.1|5\.15)" \
+  /boot/grub/grub.cfg
+```
+
+应输出新旧两个内核版本：
+
+```bash
+menuentry 'Ubuntu, with Linux 6.1.177-0601177-generic (recovery mode)' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-6.1.177-0601177-generic-recovery-47d2fbc9-4109-48a7-a4af-b6869f23db28' {
+menuentry 'Ubuntu, with Linux 5.15.0-67-generic (recovery mode)' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-5.15.0-67-generic-recovery-47d2fbc9-4109-48a7-a4af-b6869f23db28' {
+```
+
+检查无误后，重启系统，会自动选择更新的 6.1.177 版本内核：
+
+```bash
+sudo reboot
+```
+
+重启完成后，Wi-Fi 驱动应已经正常加载，此时 `uname -r` 检查内核版本，输出应为 `6.1.177-0601177-generic`。
 
 
 
