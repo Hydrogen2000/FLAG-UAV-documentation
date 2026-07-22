@@ -61,7 +61,7 @@ sudo apt install ros-noetic-vrpn
 
 ```bash
 mkdir vrpn_client_ros/src -p
-cd vrpn_client_ros/src
+cd ~/vrpn_client_ros/src
 catkin_init_workspace
 git clone https://github.com/ros-drivers/vrpn_client_ros.git
 cd ..
