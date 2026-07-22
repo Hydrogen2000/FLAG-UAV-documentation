@@ -20,7 +20,7 @@ https://github.com/clash-verge-rev/clash-verge-rev/releases/tag/v1.7.7
 
 ## 2. Clash Verge 配置代理
 
-启动软件后，在**订阅**页卡填入订阅地址，点击**导入**。导入成功会显示添加的订阅：
+启动软件后，在<u>**订阅**</u>页卡填入订阅地址，点击**导入**。导入成功会显示添加的订阅：
 
 <img src="/VPN/images/8.png" width="800">
 
