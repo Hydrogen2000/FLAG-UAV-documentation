@@ -1,6 +1,6 @@
 # ROS Noetic
 
-Ubuntu 20.04.6 LTS 安装 ROS Noetic
+Ubuntu 20.04.6 LTS 操作系统安装 ROS Noetic
 
 采用社区鱼香ROS的一键安装脚本，避免繁琐的官网安装步骤和网络连接问题。
 
