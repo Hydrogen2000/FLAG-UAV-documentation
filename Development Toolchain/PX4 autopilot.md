@@ -89,3 +89,46 @@ pip3 install --user jsonschema
 pip3 install --user toml
 pip3 install future
 ```
+
+## 二、安装 MAVROS
+
+MAVROS 软件包通过 MAVLink 协议支持运算平台与飞控单元的 ROS 通信。
+
+### 1. 安装软件包
+
+```bash
+sudo apt-get install ros-noetic-mavros ros-noetic-mavros-extras
+```
+
+### 2. 通过官方脚本安装 GeographicLib 库
+
+```bash
+wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
+sudo bash ./install_geographiclib_datasets.sh
+```
+
+## 三、安装 QGroundControl 地面站
+
+QG C是 PX4 飞控固件支持的地面站调试软件。
+
+### (1) 安装软件包依赖
+
+```bash
+sudo usermod -a -G dialout $USER
+sudo apt-get remove modemmanager -y
+sudo apt install gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-gl -y
+sudo apt install libfuse2 -y
+sudo apt install libxcb-xinerama0 libxkbcommon-x11-0 libxcb-cursor-dev -y
+```
+
+### (2) 下载软件并赋予运行权限
+
+官网下载链接：https://d176tv9ibo4jno.cloudfront.net/latest/QGroundControl.AppImage
+
+下载完成后，赋予软件运行权限：
+
+```bash
+chmod +x ./QGroundControl.AppImage
+```
+
+之后可以通过双击运行软件，或者运行`./QGroundControl.AppImage`。
