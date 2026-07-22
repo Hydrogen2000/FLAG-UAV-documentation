@@ -16,6 +16,8 @@ uname -r
 
 应输出当前内核版本 `5.15.0-139-generic`。
 
+检查第三方模块：
+
 ```bash
 sudo apt install dkms
 dkms status
