@@ -25,7 +25,7 @@ git clone https://github.com/PX4/PX4-Autopilot.git --branch v1.13.3 --depth 1
 进入仓库不断补全之前的提交：
 
 ```bash
-cd PX4-Autopilot/
+cd ~/PX4-Autopilot
 git fetch --depth 1000
 ...
 git fetch --unshallow 
