@@ -58,8 +58,6 @@ git submodule update --init --recursive
 make px4_fmu-v6c_default
 ```
 
-编译时注意确认输出，提示版本为 `-- PX4 version: v1.13.3`。
-
 在编译过程中，会遇到缺少一些软件包而编译失败的问题，按照编译提示逐渐安装齐软件包即可。例如本工程遇到了：
 
 ```bash
