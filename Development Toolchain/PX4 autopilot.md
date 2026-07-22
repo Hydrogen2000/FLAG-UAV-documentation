@@ -35,11 +35,12 @@ git fetch --unshallow
 
 `--unshallow` 参数表示补全所有提交。
 
-仓库补全后，再进行`git fetch`会显示 "**对于一个完整的仓库，参数 --unshallow 没有意义**"。
+仓库补全后，再进行`git fetch`会显示 `对于一个完整的仓库，参数 --unshallow 没有意义`。
 
 ### 2. 下载 PX4 子模块
 
 ```bash
+cd ~/PX4-Autopilot
 git submodule update --init --recursive
 ```
 
@@ -51,75 +52,32 @@ git submodule update --init --recursive
 
 ### 4. 编译PX4固件
 
-针对自己的飞控单元选择编译指令，本工程为`Holybro Pixhawk 6C`，指令如下：
+针对自己的飞控单元选择编译指令，本工程为 **Holybro Pixhawk 6C**，指令如下：
 
 ```bash
 make px4_fmu-v6c_default
 ```
 
-编译时注意确认输出，提示版本为`-- PX4 version: v1.13.3`。
+编译时注意确认输出，提示版本为 `-- PX4 version: v1.13.3`。
 
-在编译过程中，会遇到缺少一些软件包而编译失败的问题，按照编译提示逐渐安装齐软件包即可。例如本文遇到了：
+在编译过程中，会遇到缺少一些软件包而编译失败的问题，按照编译提示逐渐安装齐软件包即可。例如本工程遇到了：
 
 ```bash
-Traceback (most recent call last):
-  File "<string>", line 1, in <module>
 ModuleNotFoundError: No module named 'menuconfig'
 CMake Error at cmake/kconfig.cmake:6 (message):
   kconfiglib is not installed or not in PATH
-  please install using "pip3 install kconfiglib"
-```
 
-```bash
 CMake Error at CMakeLists.txt:235 (project):
   The CMAKE_C_COMPILER:
     arm-none-eabi-gcc
   is not a full path and was not found in the PATH.
-  Tell CMake where to find the compiler by setting either the environment
-  variable "CC" or the CMake cache entry CMAKE_C_COMPILER to the full path to
-  the compiler, or to the compiler name if it is in the PATH.
--- Enabling double FP precision hardware instructions
-```
 
-```bash
-Failed to import packaging: No module named 'packaging'
-You may need to install it using:
-    pip3 install --user packaging
-```
-
-```bash
 Failed to import jinja2: No module named 'jinja2'
-You may need to install it using:
-    pip3 install --user jinja2
-```
 
-```bash
-Failed to import toml: No module named 'toml'
-You may need to install it using:
-    pip3 install --user toml
-```
-
-```bash
 Failed to import jsonschema: No module named 'jsonschema'
-You may need to install it using:
-    pip3 install --user jsonschema
-```
 
-```bash
-Traceback (most recent call last):
-  File "/home/hydrogen/PX4-Autopilot/src/drivers/uavcan/libuavcan/libuavcan/dsdl_compiler/libuavcan_dsdlc", line 59, in <module>
-    from libuavcan_dsdl_compiler import run as dsdlc_run
-  File "/home/hydrogen/PX4-Autopilot/src/drivers/uavcan/libuavcan/libuavcan/dsdl_compiler/libuavcan_dsdl_compiler/__init__.py", line 18, in <module>
-    from dronecan import dsdl
-ModuleNotFoundError: No module named 'dronecan'
-```
+Failed to import toml: No module named 'toml'
 
-```bash
-Traceback (most recent call last):
-  File "/home/hydrogen/PX4-Autopilot/src/modules/mavlink/mavlink/pymavlink/tools/mavgen.py", line 16, in <module>
-    from pymavlink.generator import mavgen
-  File "/home/hydrogen/PX4-Autopilot/src/modules/mavlink/mavlink/pymavlink/generator/mavgen.py", line 26, in <module>
-    from future import standard_library
 ModuleNotFoundError: No module named 'future'
 ```
 
@@ -127,11 +85,9 @@ ModuleNotFoundError: No module named 'future'
 
 ```bash
 pip3 install kconfiglib
-apt install gcc-arm-none-eabi
-pip3 install --user packaging
+sudo apt install gcc-arm-none-eabi
 pip3 install --user jinja2
-pip3 install --user toml
 pip3 install --user jsonschema
-pip3 install dronecan
+pip3 install --user toml
 pip3 install future
 ```
